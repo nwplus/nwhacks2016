@@ -42,7 +42,11 @@ type server struct {
 
 func (s *server) staticHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("path:", r.URL.Path)
-	http.ServeFile(w, r, "static/"+r.URL.Path)
+	if r.URL.Path == "/" {
+		http.ServeFile(w, r, "static/app.html")
+	} else {
+		http.ServeFile(w, r, "static/"+r.URL.Path)
+	}
 }
 
 func (s *server) registerHandler(w http.ResponseWriter, r *http.Request) {
