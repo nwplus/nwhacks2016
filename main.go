@@ -33,6 +33,7 @@ func main() {
 	sr.HandleFunc("/register", s.registerHandler)
 	r.HandleFunc("/{rest:.*}", s.staticHandler)
 	http.Handle("/", r)
+	log.Fatal(http.ListenAndServe(":8182", nil))
 }
 
 type server struct {

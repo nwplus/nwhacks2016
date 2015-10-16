@@ -1,0 +1,54 @@
+<dom-module id="register-form">
+  <template>
+    <style>
+      paper-button {
+        background: #4285f4;
+        color: #fff;
+      }
+    </style>
+
+    <paper-card heading="nwHacks Registration">
+      <div class="card-content">
+
+        <paper-input label="Your Name" value="{{name}}"></paper-input>
+        <paper-input label="Email" value="{{email}}"></paper-input>
+        <paper-input label="Your School" value="{{school}}"></paper-input>
+        <paper-input label="Where are you traveling from?" value="{{location}}"></paper-input>
+        <paper-input label="GitHub" value="{{github}}"></paper-input>
+        <paper-input label="LinkedIn" value="{{linkedin}}"></paper-input>
+        <paper-input label="Personal Site" value="{{personalsite}}"></paper-input>
+
+        <paper-dropdown-menu label="T-Shirt Size">
+          <paper-menu class="dropdown-content">
+            <paper-item>S</paper-item>
+            <paper-item>M</paper-item>
+            <paper-item>L</paper-item>
+            <paper-item>XL</paper-item>
+          </paper-menu>
+        </paper-dropdown-menu>
+        <paper-checkbox checked="{{travelReimbursement}}">Do you need travel reimbursements?</paper-checkbox>
+      </div>
+      <div class="card-actions">
+        <paper-button elevation="1">Register</paper-button>
+      </div>
+    </paper-card>
+  </template>
+
+  <script>
+// element registration
+Polymer({
+  is: "register-form",
+
+  // add properties and methods on the element's prototype
+
+  properties: {
+    // declare properties for the element's public API
+    greeting: {
+      type: String,
+      value: "Hello!"
+    }
+  }
+});
+  </script>
+
+</dom-module>
