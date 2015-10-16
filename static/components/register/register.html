@@ -1,6 +1,9 @@
 <dom-module id="register-form">
   <template>
     <style>
+      :host {
+        display: block;
+      }
       paper-button {
         background: #4285f4;
         color: #fff;
@@ -28,6 +31,7 @@
         </paper-dropdown-menu>
         <paper-checkbox checked="{{travelReimbursement}}">Do you need travel reimbursements?</paper-checkbox>
       </div>
+
       <div class="card-actions">
         <paper-button elevation="1">Register</paper-button>
       </div>
@@ -39,16 +43,8 @@
 Polymer({
   is: "register-form",
 
-  // add properties and methods on the element's prototype
-
   properties: {
-    // declare properties for the element's public API
-    greeting: {
-      type: String,
-      value: "Hello!"
-    }
   }
 });
   </script>
-
 </dom-module>

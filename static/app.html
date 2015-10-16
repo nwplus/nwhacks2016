@@ -3,31 +3,40 @@
   <head>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:900">
     <link rel="stylesheet" href="css/main.css">
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
-    </script>
+
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
     <link rel="import" href="bower_components/paper-button/paper-button.html">
-    <link rel="import" href="bower_components/paper-input/paper-input.html">
-    <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
     <link rel="import" href="bower_components/paper-card/paper-card.html">
+    <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
     <link rel="import" href="bower_components/paper-item/paper-item.html">
     <link rel="import" href="bower_components/paper-menu/paper-menu.html">
-    <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
-    <link rel="import" href="components/register/register.html">
-  </head>
-  <body>
-    <register-form></register-form>
+    <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/app-router/app-router.html">
 
-    <script>
-// To ensure that elements are ready on polyfilled browsers,
-// wait for WebComponentsReady.
-document.addEventListener('WebComponentsReady', function() {
-  var input = document.querySelector('paper-input');
-  var button = document.querySelector('paper-button');
-  var greeting = document.getElementById("greeting");
-  button.addEventListener('click', function() {
-    greeting.textContent = 'Hello, ' + input.value;
-  });
-});
-    </script>
+    <link rel="import" href="components/register/register.html">
+    <link rel="import" href="components/index-page/index-page.html">
+    <style>
+      body paper-card {
+        margin: 50px auto;
+        display: block;
+        max-width: 600px;
+      }
+    </style>
+  </head>
+  <body class="fullbleed layout vertical">
+    <paper-scroll-header-panel class="flex" condenses keep-condensed-header>
+      <paper-toolbar class="tall">
+        <div class="bottom title">nwHacks 2016</div>
+      </paper-toolbar>
+      <app-router>
+        <app-route path="/" element="index-page"></app-route>
+        <app-route path="/register" element="register-form"></app-route>
+        <app-route path="*" redirect="/"></app-route>
+      </app-router>
+    </paper-scroll-header-panel>
   </body>
 </html>
