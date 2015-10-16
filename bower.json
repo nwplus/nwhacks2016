@@ -1,0 +1,21 @@
+{
+  "name": "nwhacks2016",
+  "version": "0.0.0",
+  "homepage": "https://github.com/nwhacks2015/nwhacks2016",
+  "authors": [
+    "Tristan Rice <rice@fn.lc>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "directory": "static/bower_components/",
+  "dependencies": {
+    "app-router": "~2.6.1",
+    "polymer": "Polymer/polymer#^1.1.0"
+  }
+}
