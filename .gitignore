@@ -26,3 +26,5 @@ _testmain.go
 static/bower_components/
 
 nwhacks2016
+
+.sass-cache
