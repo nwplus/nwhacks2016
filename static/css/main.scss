@@ -1,3 +1,25 @@
 body {
   font-family: 'Roboto';
+  background: url("../img/background2.webp") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+paper-toolbar.tall {
+  background: rgba(64,64,64,0.9);
+}
+
+paper-card .card-content {
+  padding-top: 0;
+}
+
+paper-button {
+  color: #444;
+}
+
+.title a {
+  color: inherit;
+  text-decoration: inherit;
 }
