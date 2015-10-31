@@ -25,6 +25,7 @@
 
     <link rel="import" href="components/register/register.html">
     <link rel="import" href="components/index-page/index-page.html">
+    <link rel="import" href="components/select-hackers/select-hackers.html">
     <style>
       body paper-card {
         margin: 50px auto;
@@ -42,6 +43,7 @@
       <app-router>
         <app-route path="/" element="index-page"></app-route>
         <app-route path="/register" element="register-form"></app-route>
+        <app-route path="/select" element="select-hackers"></app-route>
         <app-route path="*" redirect="/"></app-route>
       </app-router>
     </paper-scroll-header-panel>
