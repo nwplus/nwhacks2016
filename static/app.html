@@ -36,7 +36,7 @@
     <title>nwHacks 2016</title>
   </head>
   <body class="fullbleed">
-    <div id="menu">
+    <paper-material id="menu" class="noback">
       <a href="#!/">
         <paper-button>HOME</paper-button>
       </a>
@@ -46,7 +46,7 @@
         <paper-button>helpq</paper-button>
       </a>
       <paper-button>contact</paper-button>
-    </div>
+    </paper-material>
     <div id="header">
       <img id="trees" src="img/Trees2.png">
       <div id="title">
@@ -75,5 +75,17 @@
       </p>
       <div class="imgcont"><img class="" src="img/logotxt.png" alt=""></div>
     </footer>
+    <script>
+      function updateTitle(e) {
+        var menu = document.querySelector('#menu');
+        if (window.scrollY == 0) {
+          menu.classList.add('noback');
+        } else {
+          menu.classList.remove('noback');
+        }
+      }
+      window.onscroll = updateTitle;
+      updateTitle();
+    </script>
   </body>
 </html>

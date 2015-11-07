@@ -20,10 +20,15 @@ paper-button {
   top: 0;
   width: 100%;
   z-index: 100;
-  padding: 10px; }
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: background-color 0.2s, box-shadow 0.2s; }
   #menu a {
     text-decoration: none;
     color: inherit; }
+  #menu.noback {
+    box-shadow: none;
+    background-color: transparent; }
 
 a {
   color: #039BE5;
@@ -67,6 +72,10 @@ footer {
   padding: 50px;
   padding-bottom: 35px; }
 
+h2, h3 {
+  margin-bottom: -5px;
+  margin-top: 30px; }
+
 h1, h2, h3, h4 {
   text-transform: uppercase; }
 
@@ -76,4 +85,6 @@ h1 {
 .content {
   font-weight: 200;
   max-width: 900px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: justify; }
