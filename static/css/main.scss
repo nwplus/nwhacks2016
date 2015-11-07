@@ -1,10 +1,5 @@
 body {
   font-family: 'Roboto';
-  background: url("../img/background2.webp") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 paper-toolbar.tall {
@@ -22,4 +17,88 @@ paper-button {
 .title a {
   color: inherit;
   text-decoration: inherit;
+}
+
+#menu {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 10px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+a {
+  color: #039BE5;
+  text-decoration: none;
+  &:hover {
+    color: #0384C3;
+  }
+}
+
+
+#header {
+  height: 100%;
+  width: 100%;
+  background: url("../img/BlurryBlue.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  position: relative;
+
+  #title {
+    $logo-size: 300px;
+
+    width: 100%;
+    top: calc(40% - 150px);
+    position: absolute;
+    text-align: center;
+
+    img {
+      height: $logo-size;
+    }
+  }
+  #buttons {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+    text-align: center;
+
+    paper-button {
+      background-color: white;
+    }
+  }
+}
+
+#trees {
+  width: 100%;
+  bottom: 0px;
+  position: absolute;
+  margin-bottom: -1px;
+}
+
+footer {
+  margin-top: 150px;
+  background-color: #eee;
+  padding: 50px;
+  padding-bottom: 35px;
+}
+
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+}
+h1 {
+  text-align: center;
+}
+.content {
+  font-weight: 200;
+  max-width: 900px;
+  margin: 0 auto;
 }

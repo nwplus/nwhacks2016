@@ -20,12 +20,12 @@
     <link rel="import" href="bower_components/paper-item/paper-icon-item.html">
     <link rel="import" href="bower_components/paper-item/paper-item.html">
     <link rel="import" href="bower_components/paper-menu/paper-menu.html">
-    <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
     <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
 
-    <link rel="import" href="components/register/register.html">
     <link rel="import" href="components/index-page/index-page.html">
+    <link rel="import" href="components/register/register.html">
     <link rel="import" href="components/select-hackers/select-hackers.html">
+    <link rel="import" href="components/sponsor-page/sponsor-page.html">
     <style>
       body paper-card {
         margin: 50px auto;
@@ -35,17 +35,45 @@
     </style>
     <title>nwHacks 2016</title>
   </head>
-  <body class="fullbleed layout vertical">
-    <paper-scroll-header-panel class="flex" condenses keep-condensed-header>
-      <paper-toolbar class="tall">
-        <div class="bottom title"><a href="#!/">nwHacks 2016</a></div>
-      </paper-toolbar>
-      <app-router>
-        <app-route path="/" element="index-page"></app-route>
-        <app-route path="/register" element="register-form"></app-route>
-        <app-route path="/select" element="select-hackers"></app-route>
-        <app-route path="*" redirect="/"></app-route>
-      </app-router>
-    </paper-scroll-header-panel>
+  <body class="fullbleed">
+    <div id="menu">
+      <a href="#!/">
+        <paper-button>HOME</paper-button>
+      </a>
+      <paper-button>faq</paper-button>
+      <paper-button>schedule</paper-button>
+      <a href="https://q.nwhacks.io">
+        <paper-button>helpq</paper-button>
+      </a>
+      <paper-button>contact</paper-button>
+    </div>
+    <div id="header">
+      <img id="trees" src="img/Trees2.png">
+      <div id="title">
+        <a href="#!/">
+          <img src="img/Logo.png">
+        </a>
+      </div>
+      <div id="buttons">
+        <a href="#!/register"><paper-button elevation="1">Register</paper-button></a>
+        <a href="#!/sponsors"><paper-button elevation="1">sponsor</paper-button></a>
+        <a href="https://s2015nwhacks.devpost.com/"><paper-button elevation="1">previous hacks</paper-button></a>
+      </div>
+    </div>
+    <app-router>
+      <app-route path="/" element="index-page"></app-route>
+      <app-route path="/register" element="register-form"></app-route>
+      <app-route path="/select" element="select-hackers"></app-route>
+      <app-route path="/sponsors" element="sponsor-page"></app-route>
+      <app-route path="*" redirect="/"></app-route>
+    </app-router>
+    <footer class="grid-parent">
+      <nav class="grid-container">
+        <a href="#!/sponsors">Become a Sponsor</a> <a href="mailto:sponsorship@nwhacks.io">Email us</a> <a href="#!/codeofconduct">Our Code of Conduct </a>
+      </nav>
+      <p class="grid-container">nwhacks 2016 - Organised and held by <a href="//www.startupstorm.org/" target="_blank">StartupStorm</a>
+      </p>
+      <div class="imgcont"><img class="" src="img/logotxt.png" alt=""></div>
+    </footer>
   </body>
 </html>
