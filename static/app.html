@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="image_src" href="//nwhacks.io/img/logotxt.png" />
+    <meta property="og:description" content="nwHacks 2016 is the BIGGEST hackathon in Western Canada with over 600 hackers coming from around the region, on February in the University of British Columbia."/>
+    <meta property="og:image" content="//nwhacks.io/img/logotxt_green.jpg" />
+    <meta property="og:title" content="nwHacks Spring 2016" />
+    <meta property="og:url" content="//nwhacks.io" />
+
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:900">
     <link rel="stylesheet" href="css/main.css">
 
@@ -26,13 +33,6 @@
     <link rel="import" href="components/register/register.html">
     <link rel="import" href="components/select-hackers/select-hackers.html">
     <link rel="import" href="components/sponsor-page/sponsor-page.html">
-    <style>
-      body paper-card {
-        margin: 50px auto;
-        display: block;
-        max-width: 600px;
-      }
-    </style>
     <title>nwHacks 2016</title>
   </head>
   <body class="fullbleed">
@@ -60,13 +60,15 @@
         <a href="https://s2015nwhacks.devpost.com/"><paper-button elevation="1">previous hacks</paper-button></a>
       </div>
     </div>
-    <app-router>
-      <app-route path="/" element="index-page"></app-route>
-      <app-route path="/register" element="register-form"></app-route>
-      <app-route path="/select" element="select-hackers"></app-route>
-      <app-route path="/sponsors" element="sponsor-page"></app-route>
-      <app-route path="*" redirect="/"></app-route>
-    </app-router>
+    <div class="wrapper">
+      <app-router>
+        <app-route path="/" element="index-page"></app-route>
+        <app-route path="/register" element="register-form"></app-route>
+        <app-route path="/select" element="select-hackers"></app-route>
+        <app-route path="/sponsors" element="sponsor-page"></app-route>
+        <app-route path="*" redirect="/"></app-route>
+      </app-router>
+    </div>
     <footer class="grid-parent">
       <nav class="grid-container">
         <a href="#!/sponsors">Become a Sponsor</a> <a href="mailto:sponsorship@nwhacks.io">Email us</a> <a href="#!/codeofconduct">Our Code of Conduct </a>

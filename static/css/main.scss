@@ -50,8 +50,9 @@ a {
 
 
 #header {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
+  overflow: hidden;
   background: url("../img/BlurryBlue.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -85,10 +86,22 @@ a {
 }
 
 #trees {
-  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
   bottom: 0px;
   position: absolute;
   margin-bottom: -1px;
+}
+
+@media (max-width: 699px) {
+  #trees {
+    max-width: 300%;
+  }
+}
+@media (max-width: 900px) and (min-width: 700px) {
+  #trees {
+    max-width: 150%;
+  }
 }
 
 footer {
@@ -111,6 +124,14 @@ h1 {
   font-weight: 200;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 15px;
   text-align: justify;
+}
+.wrapper {
+  padding: 0 15px;
+}
+
+body paper-card {
+  margin: 50px auto;
+  display: block;
+  max-width: 600px;
 }
