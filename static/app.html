@@ -38,7 +38,7 @@
   <body class="fullbleed">
     <paper-material id="menu" class="noback">
       <a href="#!/">
-        <paper-button>HOME</paper-button>
+        <paper-button>nwhacks</paper-button>
       </a>
       <paper-button>faq</paper-button>
       <paper-button>schedule</paper-button>
@@ -69,13 +69,29 @@
         <app-route path="*" redirect="/"></app-route>
       </app-router>
     </div>
-    <footer class="grid-parent">
-      <nav class="grid-container">
-        <a href="#!/sponsors">Become a Sponsor</a> <a href="mailto:sponsorship@nwhacks.io">Email us</a> <a href="#!/codeofconduct">Our Code of Conduct </a>
-      </nav>
-      <p class="grid-container">nwhacks 2016 - Organised and held by <a href="//www.startupstorm.org/" target="_blank">StartupStorm</a>
-      </p>
-      <div class="imgcont"><img class="" src="img/logotxt.png" alt=""></div>
+    <footer>
+      <table>
+        <tr>
+          <td>
+            nwHacks Team
+            <a href="https://fn.lc">Tristan Rice</a>
+            TODO
+          </td>
+          <td>
+            <nav class="grid-container">
+              <a href="#!/sponsors">Become a Sponsor</a>
+              <a href="mailto:sponsorship@nwhacks.io">Email us</a>
+              <a href="#!/codeofconduct">Our Code of Conduct </a>
+            </nav>
+          </td>
+          <td>
+            Organised and held by <a href="//www.startupstorm.org/" target="_blank">StartupStorm</a>
+          </td>
+          <td>
+            <div class="imgcont"><img src="img/Logo.png"></div>
+          </td>
+        </tr>
+      </table>
     </footer>
     <script>
       function updateTitle(e) {

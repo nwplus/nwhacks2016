@@ -79,6 +79,14 @@ footer {
   background-color: #eee;
   padding: 50px;
   padding-bottom: 35px; }
+  footer .imgcont img {
+    max-height: 100px; }
+  footer a {
+    display: block; }
+  footer table {
+    width: 100%; }
+    footer table td:last-child {
+      text-align: right; }
 
 h2, h3 {
   margin-bottom: -5px;

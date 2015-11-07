@@ -109,6 +109,20 @@ footer {
   background-color: #eee;
   padding: 50px;
   padding-bottom: 35px;
+
+  .imgcont img {
+    max-height: 100px;
+  }
+  a {
+    display: block;
+  }
+  table {
+    width: 100%;
+
+    td:last-child {
+      text-align: right;
+    }
+  }
 }
 h2, h3 {
   margin-bottom: -5px;
