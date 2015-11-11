@@ -111,3 +111,11 @@ body paper-card {
   margin: 50px auto;
   display: block;
   max-width: 600px; }
+
+#warning {
+  color: red;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100; }
