@@ -25,7 +25,7 @@
     "paper-checkbox": "PolymerElements/paper-checkbox#~1.0.12",
     "paper-dialog": "PolymerElements/paper-dialog#~1.0.2",
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#~1.0.5",
-    "paper-input": "PolymerElements/paper-input#~1.0.15",
+    "paper-input": "PolymerElements/paper-input",
     "paper-item": "PolymerElements/paper-item#~1.0.5",
     "paper-menu": "PolymerElements/paper-menu#~1.1.1",
     "paper-scroll-header-panel": "PolymerElements/paper-scroll-header-panel#~1.0.8",
