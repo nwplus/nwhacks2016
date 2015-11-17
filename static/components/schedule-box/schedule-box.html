@@ -71,7 +71,7 @@ Polymer({
       day.events.push(event);
     });
     daysArr.sort(function(a, b) {
-      return a - b;
+      return a.start - b.start;
     });
     daysArr.forEach(function(day) {
       day.events.sort(function(a, b) {
