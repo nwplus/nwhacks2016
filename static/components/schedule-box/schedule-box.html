@@ -4,19 +4,60 @@
       :host {
         display: block;
       }
+      .day {
+        margin-top: 0;
+      }
+      .day table {
+        width: 100%;
+      }
+      .day td {
+        padding: 0 16px 20px;
+      }
+      .day td:nth-child(2) {
+        width: 100%;
+      }
+      .day td:last-child {
+        white-space: nowrap;
+      }
+      .card-content {
+        padding: 0px 16px;
+      }
+      .center {
+        text-align: center;
+      }
+      @media (min-width: 768px) {
+        .day {
+          width: calc(50% - 10px);
+          display: inline-block;
+        }
+        .day:first-of-type {
+          float: left;
+          margin-right: 20px;
+        }
+      }
     </style>
     <h1>Schedule</h1>
     <div class="content">
-      <a href="https://calendar.google.com/calendar/embed?src=outerearth.net_2djv2qvtpfu60m7jrcm40oannk@group.calendar.google.com&ctz=America/Los_Angeles">Google Calendar</a>
       <template is="dom-repeat" items="[[days]]">
-        <h2>[[item.name]]</h2>
-        <template is="dom-repeat" items="[[item.events]]">
-        <h3>
-          <span>[[item.displayTime]]</span> - <span>[[item.name]]</span>
-          <a href="[[map(item.location)]]">[[item.location]]</a>
-        </h3>
-        </template>
+        <paper-card class="day" heading="[[item.name]]">
+          <div class="card-content">
+            <table>
+              <tbody>
+                <template is="dom-repeat" items="[[item.events]]">
+                  <tr>
+                    <td>[[item.displayTime]]</td>
+                    <td>[[item.name]]</td>
+                    <td><a href="[[map(item.location)]]">[[item.location]]</a></td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </paper-card>
       </template>
+      <div class="center">
+        <a href="https://calendar.google.com/calendar/embed?src=outerearth.net_2djv2qvtpfu60m7jrcm40oannk@group.calendar.google.com&ctz=America/Los_Angeles">Google Calendar</a>
+      </div>
     </div>
     <iron-ajax
       auto
