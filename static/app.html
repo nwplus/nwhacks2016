@@ -129,6 +129,8 @@
         return true;
       }
       function stars() {
+        var starsDiv = document.querySelector("#stars");
+        starsDiv.innerHTML = "";
         const top = document.querySelector("#title .large-trapezoid").offsetTop;
         const bottom = document.querySelector("#faq h1").offsetTop + 30;
         const starSize = 20;
@@ -158,12 +160,15 @@
           let size = (Math.random() * starSize).toFixed(0);
           starHTML += '<star style="width:'+size+'px;height:'+size+'px;left:'+x.toFixed(0)+'px;top:'+y.toFixed(0)+'px"></star>';
         }
-        document.querySelector("#stars").innerHTML = starHTML;
+        starsDiv.innerHTML = starHTML;
       }
-      stars();
       window.addEventListener("resize", function() {
         setTimeout(stars, 1);
       });
+      window.addEventListener("hashchange", function() {
+        setTimeout(stars, 1);
+      });
+      stars();
     </script>
   </body>
 </html>

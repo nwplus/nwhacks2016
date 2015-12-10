@@ -61,7 +61,9 @@ paper-button {
   paper-button.register, paper-button.button {
     font-weight: bold;
     letter-spacing: 3px;
-    padding: 11px 15px; }
+    padding: 11px 15px;
+    margin-top: 10px;
+    margin-bottom: 10px; }
   paper-button.register {
     border-bottom: 4px solid #D74343;
     background-color: #FF6B6B;
@@ -71,6 +73,9 @@ paper-button {
     background-color: #FFFFFF;
     color: #3C4558; }
 
+@media (max-width: 475px) {
+  paper-button.register, paper-button.button {
+    display: block; } }
 a.link {
   color: #FFFFFF;
   font-style: italic;

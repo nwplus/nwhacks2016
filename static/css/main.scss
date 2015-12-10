@@ -61,6 +61,8 @@ paper-button {
     font-weight: bold;
     letter-spacing: 3px;
     padding: 11px 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   &.register {
     border-bottom: $btn-shadow-size solid $register-btn-bg-shadow;
@@ -71,6 +73,14 @@ paper-button {
     border-bottom: $btn-shadow-size solid $login-btn-bg-shadow;
     background-color: $login-btn-bg;
     color: $login-btn-fg;
+  }
+}
+
+@media (max-width: 475px) {
+  paper-button {
+    &.register, &.button {
+      display: block;
+    }
   }
 }
 
