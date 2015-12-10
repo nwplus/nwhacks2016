@@ -100,9 +100,10 @@ a {
 #menu {
   position: fixed;
   top: 0;
-  width: 100%;
+  right: 0;
+  left: 0;
   z-index: 100;
-  padding: 5px 50px;
+  padding: 5px $menu-padding;
   background-color: $dark-bg;
   color: $dark-fg;
   transition: background-color 0.2s, box-shadow 0.2s;
@@ -124,6 +125,23 @@ a {
   a {
     text-decoration: none;
     color: inherit;
+    &.right {
+      float: right;
+    }
+  }
+}
+@media (max-width: 650px) {
+  #menu {
+    paper-icon-button {
+      margin-left: $menu-padding/2;
+      margin-right: $menu-padding/2;
+    }
+    paper-button {
+      padding: 17px $menu-padding/2;
+    }
+    a.big {
+      display: none;
+    }
   }
 }
 
@@ -291,6 +309,11 @@ body paper-card {
       font-weight: 500;
       color: $dark-fg-alt;
     }
+  }
+}
+@media (max-width: 840px) {
+  div.large-trapezoid section {
+    padding: 0 20px;
   }
 }
 .small-trapezoid {
