@@ -8,7 +8,6 @@
     <meta property="og:title" content="nwHacks Spring 2016" />
     <meta property="og:url" content="//nwhacks.io" />
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:900">
     <link rel="stylesheet" href="css/main.css">
 
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
@@ -19,6 +18,7 @@
     <link rel="import" href="bower_components/iron-form/iron-form.html">
     <link rel="import" href="bower_components/iron-image/iron-image.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
     <link rel="import" href="bower_components/paper-card/paper-card.html">
     <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
     <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
@@ -37,32 +37,46 @@
     <link rel="import" href="components/schedule-box/schedule-box.html">
     <title>nwHacks 2016</title>
   </head>
-  <body class="fullbleed">
+  <body>
     <div id="warning">WARNING: WIP All data subject to change/loss.</div>
-    <paper-material id="menu" class="noback">
+    <nav id="menu">
       <a href="#!/">
-        <paper-button>nwhacks</paper-button>
+        <paper-icon-button src="svg/NWHacks-NavBar-Logo.svg"></paper-icon-button>
       </a>
-      <paper-button>faq</paper-button>
-      <a href="#!/schedule">
+      <a href="#intro">
+        <paper-button>about</paper-button>
+      </a>
+      <a href="#faq">
+        <paper-button>faq</paper-button>
+      </a>
+      <a href="#schedule">
         <paper-button>schedule</paper-button>
+      </a>
+      <a href="#sponsors">
+        <paper-button>sponsors</paper-button>
       </a>
       <a href="https://q.nwhacks.io">
         <paper-button>helpq</paper-button>
       </a>
-      <paper-button>contact</paper-button>
-    </paper-material>
+    </nav>
     <div id="header">
-      <img id="trees" src="img/Trees2.png">
       <div id="title">
         <a href="#!/">
-          <img src="img/Logo.png">
+          <object data="svg/NWHacks-Web-Logo.svg" type="image/svg+xml"></object>
         </a>
+        <br>
+        <div class="large-trapezoid">
+          <h1>WESTERN CANADA'S LARGEST HACKATHON</h1>
+          <h2>FEBRUARY 27-28 @ Fred Kaiser Building, UBC</h2>
+        </div>
       </div>
       <div id="buttons">
-        <a href="#!/register"><paper-button elevation="1">Register</paper-button></a>
-        <a href="#!/sponsors"><paper-button elevation="1">sponsor</paper-button></a>
-        <a href="https://s2015nwhacks.devpost.com/"><paper-button elevation="1">previous hacks</paper-button></a>
+        <a href="#!/register"><paper-button class="register">Register</paper-button></a>
+        <a href="https://s2015nwhacks.devpost.com/"><paper-button class="button">previous hacks</paper-button></a>
+        <br>
+        <br>
+        <br>
+        <a href="#!/sponsors" class="link">Interested in becoming a sponsor?</a>
       </div>
     </div>
     <div class="wrapper">
@@ -71,12 +85,14 @@
         <app-route path="/register" element="register-form"></app-route>
         <app-route path="/select" element="select-hackers"></app-route>
         <app-route path="/sponsors" element="sponsor-page"></app-route>
-        <app-route path="/schedule" element="schedule-box"></app-route>
         <app-route path="*" redirect="/"></app-route>
       </app-router>
     </div>
     <footer>
-      <table>
+      <div class="skyline">
+        <object data="svg/Skyline-Footer-Cropped.svg" type="image/svg+xml"></object>
+      </div>
+      <table class="foot">
         <tr>
           <td>
             nwHacks Team
@@ -93,23 +109,8 @@
           <td>
             Organised and held by <a href="//www.startupstorm.org/" target="_blank">StartupStorm</a>
           </td>
-          <td>
-            <div class="imgcont"><img src="img/Logo.png"></div>
-          </td>
         </tr>
       </table>
     </footer>
-    <script>
-      function updateTitle(e) {
-        var menu = document.querySelector('#menu');
-        if (window.scrollY == 0) {
-          menu.classList.add('noback');
-        } else {
-          menu.classList.remove('noback');
-        }
-      }
-      window.onscroll = updateTitle;
-      updateTitle();
-    </script>
   </body>
 </html>

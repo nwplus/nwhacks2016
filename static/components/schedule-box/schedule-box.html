@@ -3,15 +3,30 @@
     <style>
       :host {
         display: block;
+        margin-top: 300px;
       }
       .day {
         margin-top: 0;
+        text-align: center;
       }
       .day table {
         width: 100%;
+        text-align: left;
       }
       .day td {
-        padding: 0 16px 20px;
+        padding: 5px 10px;
+      }
+      .day td:first-child {
+        white-space: nowrap;
+        font-weight: 500;
+      }
+      .day .time {
+        font-size: 20pt;
+      }
+      .day .period {
+        text-transform: uppercase;
+        font-size: 10pt;
+        margin-left: 2px;
       }
       .day td:nth-child(2) {
         width: 100%;
@@ -21,9 +36,13 @@
       }
       .card-content {
         padding: 0px 16px;
+        color: #444;
       }
       .center {
         text-align: center;
+      }
+      .gcal {
+        margin: 30px 0;
       }
       @media (min-width: 768px) {
         .day {
@@ -36,16 +55,19 @@
         }
       }
     </style>
-    <h1>Schedule</h1>
+    <h1>SCHEDULE</h1>
     <div class="content">
       <template is="dom-repeat" items="[[days]]">
-        <paper-card class="day" heading="[[item.name]]">
+        <div class="day">
+          <div class="small-trapezoid">[[item.name]]</div>
           <div class="card-content">
             <table>
               <tbody>
                 <template is="dom-repeat" items="[[item.events]]">
                   <tr>
-                    <td>[[item.displayTime]]</td>
+                    <td>
+                      <span class="time">[[item.displayTime]]</span><span class="period">[[item.timePeriod]]</span>
+                    </td>
                     <td>[[item.name]]</td>
                     <td><a href="[[map(item.location)]]">[[item.location]]</a></td>
                   </tr>
@@ -53,9 +75,9 @@
               </tbody>
             </table>
           </div>
-        </paper-card>
+        </div>
       </template>
-      <div class="center">
+      <div class="center gcal">
         <a href="https://calendar.google.com/calendar/embed?src=outerearth.net_2djv2qvtpfu60m7jrcm40oannk@group.calendar.google.com&ctz=America/Los_Angeles">Google Calendar</a>
       </div>
     </div>
@@ -103,10 +125,16 @@ Polymer({
         daysArr.push(day);
         days[dayTitle] = day;
       }
+      var displayTime = start.format("h");
+      var minute = start.format("mm");
+      if (minute !== '00') {
+        displayTime += ':' + minute;
+      }
       var event = {
         name: item.summary,
         start: start,
-        displayTime: start.format("HH:mm"),
+        displayTime: displayTime,
+        timePeriod: start.format("a"),
         location: item.location,
       }
       day.events.push(event);
