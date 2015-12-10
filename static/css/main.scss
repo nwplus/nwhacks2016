@@ -6,7 +6,7 @@ $logo-size: 500px;
 $menu-padding: 15px;
 $tagline-font-size: 22pt;
 $infoline-font-size: 17pt;
-$link: #FF6B6B;
+$link: #4BAE74;
 
 $btn-shadow-size: 4px;
 $register-btn-fg: $dark-fg;
@@ -80,9 +80,12 @@ a.link {
   letter-spacing: 2px;
   border-bottom: 1px solid;
   text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 a {
-  color: $register-btn-bg;
+  color: $link;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -200,6 +203,12 @@ h1 {
   font-weight: 500;
   font-size: 28pt;
 }
+.h1-container {
+  text-align: center;
+  h1 {
+    display: inline-block;
+  }
+}
 h2, p {
   font-size: 14pt;
 }
@@ -298,4 +307,13 @@ body paper-card {
   font-size: 20pt;
   display: inline-block;
   margin: 30px 0;
+}
+
+star {
+  position: absolute;
+  background-image: url(../svg/Stars-Single.svg);
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
 }

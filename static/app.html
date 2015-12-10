@@ -112,5 +112,54 @@
         </tr>
       </table>
     </footer>
+    <div id="stars"></div>
+    <script>
+      'use strict';
+      function posValid(boxes, x, y) {
+        for (var i = 0; i < boxes.length; i++) {
+          let box = boxes[i];
+          if (box.left < x && box.right > x && box.top < y && box.bottom > y) {
+            return false;
+          }
+        }
+        return true;
+      }
+      function stars() {
+        const top = document.querySelector("#title .large-trapezoid").offsetTop;
+        const bottom = document.querySelector("#faq h1").offsetTop + 30;
+        const starSize = 20;
+        const margin = 15;
+        const elems = document.querySelectorAll("h1, paper-button, p, .large-trapezoid, .link");
+        const body = document.body.getBoundingClientRect();
+        console.log(body);
+        var boxes = Array.prototype.map.call(elems, function(obj) {
+          let elem = obj.getBoundingClientRect();
+          return {
+            left: elem.left - body.left - starSize - margin,
+            top: elem.top - body.top - starSize - margin,
+            right: elem.right - body.left + margin,
+            bottom: elem.bottom - body.top + margin,
+          };
+        });
+        console.log(boxes);
+        let starHTML = "";
+        const starCount = window.innerWidth/ 30;
+        for(let i=0; i<starCount; i++) {
+          let x = 0;
+          let y = 0;
+          while ((x == 0 && y == 0) || !posValid(boxes, x, y)) {
+            x = Math.random() * (window.innerWidth-starSize-margin*2)+margin;
+            y = Math.random() * (bottom-top) + top;
+          }
+          let size = (Math.random() * starSize).toFixed(1);
+          starHTML += '<star style="width:'+size+'px;height:'+size+'px;left:'+x.toFixed(1)+'px;top:'+y.toFixed(1)+'px"></star>';
+        }
+        document.querySelector("#stars").innerHTML = starHTML;
+      }
+      stars();
+      window.addEventListener("resize", function() {
+        setTimeout(stars, 1);
+      });
+    </script>
   </body>
 </html>
