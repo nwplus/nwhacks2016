@@ -121,7 +121,7 @@
       'use strict';
       function posValid(boxes, x, y) {
         for (var i = 0; i < boxes.length; i++) {
-          let box = boxes[i];
+          var box = boxes[i];
           if (box.left < x && box.right > x && box.top < y && box.bottom > y) {
             return false;
           }
@@ -139,7 +139,7 @@
         const body = document.body.getBoundingClientRect();
         console.log(body);
         var boxes = Array.prototype.map.call(elems, function(obj) {
-          let elem = obj.getBoundingClientRect();
+          var elem = obj.getBoundingClientRect();
           return {
             left: elem.left - body.left - starSize - margin,
             top: elem.top - body.top - starSize - margin,
@@ -148,16 +148,16 @@
           };
         });
         console.log(boxes);
-        let starHTML = "";
+        var starHTML = "";
         const starCount = window.innerWidth/ 30;
-        for(let i=0; i<starCount; i++) {
-          let x = 0;
-          let y = 0;
+        for(var i=0; i<starCount; i++) {
+          var x = 0;
+          var y = 0;
           while ((x == 0 && y == 0) || !posValid(boxes, x, y)) {
             x = Math.random() * (window.innerWidth-starSize-margin*2)+margin;
             y = Math.random() * (bottom-top) + top;
           }
-          let size = (Math.random() * starSize).toFixed(0);
+          var size = (Math.random() * starSize).toFixed(0);
           starHTML += '<star style="width:'+size+'px;height:'+size+'px;left:'+x.toFixed(0)+'px;top:'+y.toFixed(0)+'px"></star>';
         }
         starsDiv.innerHTML = starHTML;
@@ -172,7 +172,9 @@
       window.addEventListener("hashchange", function() {
         setTimeout(stars, 1);
       });
-      stars();
+      window.addEventListener('WebComponentsReady', function(e) {
+        stars();
+      });
     </script>
   </body>
 </html>
