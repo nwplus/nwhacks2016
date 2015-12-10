@@ -151,8 +151,8 @@
             x = Math.random() * (window.innerWidth-starSize-margin*2)+margin;
             y = Math.random() * (bottom-top) + top;
           }
-          let size = (Math.random() * starSize).toFixed(1);
-          starHTML += '<star style="width:'+size+'px;height:'+size+'px;left:'+x.toFixed(1)+'px;top:'+y.toFixed(1)+'px"></star>';
+          let size = (Math.random() * starSize).toFixed(0);
+          starHTML += '<star style="width:'+size+'px;height:'+size+'px;left:'+x.toFixed(0)+'px;top:'+y.toFixed(0)+'px"></star>';
         }
         document.querySelector("#stars").innerHTML = starHTML;
       }
