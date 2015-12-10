@@ -162,8 +162,12 @@
         }
         starsDiv.innerHTML = starHTML;
       }
+      var lastWidth = window.innerWidth;
       window.addEventListener("resize", function() {
-        setTimeout(stars, 1);
+        if (window.innerWidth !== lastWidth) {
+          setTimeout(stars, 1);
+          lastWidth = window.innerWidth;
+        }
       });
       window.addEventListener("hashchange", function() {
         setTimeout(stars, 1);
