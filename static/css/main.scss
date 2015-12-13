@@ -174,6 +174,7 @@ schedule-box {
       height: $logo-size;
       padding: 75px 0;
       max-width: calc(100vw - 100px);
+      max-height: calc(100vw - 100px);
     }
   }
   #buttons {

@@ -141,7 +141,8 @@ schedule-box {
   #header #title object {
     height: 500px;
     padding: 75px 0;
-    max-width: calc(100vw - 100px); }
+    max-width: calc(100vw - 100px);
+    max-height: calc(100vw - 100px); }
 #header #buttons {
   margin: 50px;
   text-align: center; }
