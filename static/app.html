@@ -80,7 +80,7 @@
         <br>
         <br>
         <br>
-        <a href="#!/sponsors" class="link">Interested in becoming a sponsor?</a>
+        <a href="#!/sponsors#sponsor" class="link">Interested in becoming a sponsor?</a>
       </div>
     </div>
     <div class="wrapper">
@@ -105,7 +105,7 @@
           </td>
           <td>
             <nav class="grid-container">
-              <a href="#!/sponsors">Become a Sponsor</a>
+              <a href="#!/sponsors#sponsor">Become a Sponsor</a>
               <a href="mailto:sponsorship@nwhacks.io">Email us</a>
               <a href="#!/codeofconduct">Our Code of Conduct </a>
             </nav>
@@ -128,15 +128,15 @@
         }
         return true;
       }
-      function stars() {
+      function renderStars() {
         var starsDiv = document.querySelector("#stars");
         starsDiv.innerHTML = "";
-        const top = document.querySelector("#title .large-trapezoid").offsetTop;
-        const bottom = document.querySelector("#faq h1").offsetTop + 30;
-        const starSize = 20;
-        const margin = 15;
-        const elems = document.querySelectorAll("h1, paper-button, p, .large-trapezoid, .link");
-        const body = document.body.getBoundingClientRect();
+        var top = document.querySelector("#title .large-trapezoid").offsetTop;
+        var bottom = document.querySelector("#faq h1").offsetTop + 30;
+        var starSize = 20;
+        var margin = 15;
+        var elems = document.querySelectorAll("h1, paper-button, p, .large-trapezoid, .link");
+        var body = document.body.getBoundingClientRect();
         console.log(body);
         var boxes = Array.prototype.map.call(elems, function(obj) {
           var elem = obj.getBoundingClientRect();
@@ -149,7 +149,7 @@
         });
         console.log(boxes);
         var starHTML = "";
-        const starCount = window.innerWidth/ 30;
+        var starCount = window.innerWidth/ 30;
         for(var i=0; i<starCount; i++) {
           var x = 0;
           var y = 0;
@@ -162,18 +162,23 @@
         }
         starsDiv.innerHTML = starHTML;
       }
+      var timeout;
+      function stars() {
+        clearTimeout(timeout);
+        timeout = setTimeout(renderStars, 100);
+      }
       var lastWidth = window.innerWidth;
       window.addEventListener("resize", function() {
         if (window.innerWidth !== lastWidth) {
-          setTimeout(stars, 1);
+          stars();
           lastWidth = window.innerWidth;
         }
       });
       window.addEventListener("hashchange", function() {
-        setTimeout(stars, 1);
+        renderStars();
       });
       window.addEventListener('WebComponentsReady', function(e) {
-        stars();
+        renderStars();
       });
     </script>
   </body>
