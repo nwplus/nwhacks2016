@@ -121,6 +121,9 @@ a {
     #menu a.right {
       float: right; }
 
+@media (max-width: 400px) {
+  #menu a.med {
+    display: none; } }
 @media (max-width: 650px) {
   #menu paper-icon-button {
     margin-left: 7.5px;
@@ -230,7 +233,7 @@ body paper-card {
   color: #FFFFFF;
   text-align: center;
   position: relative;
-  margin: 0 40px;
+  max-width: calc(100vw - 100px);
   padding: 15px 20px;
   background-color: rgba(35, 31, 32, 0.6);
   -webkit-transform: skew(-10deg);

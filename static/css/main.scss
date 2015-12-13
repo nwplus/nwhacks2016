@@ -140,6 +140,13 @@ a {
     }
   }
 }
+@media (max-width: 400px) {
+  #menu {
+    a.med {
+      display: none;
+    }
+  }
+}
 @media (max-width: 650px) {
   #menu {
     paper-icon-button {
@@ -289,7 +296,8 @@ body paper-card {
   color: $dark-fg;
   text-align: center;
   position: relative;
-  margin: 0 40px;
+  //margin: 0 40px;
+  max-width: calc(100vw - 100px);
   padding: 15px 20px;
   background-color: $dark-bg;
   -webkit-transform: skew(-10deg);
