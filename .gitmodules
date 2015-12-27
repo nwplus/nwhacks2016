@@ -1,3 +1,6 @@
 [submodule "static"]
 	path = static
 	url = git@github.com:nwhacks/nwhacks2016_static.git
+[submodule "api"]
+	path = api
+	url = git@github.com:nwhacks/nwhacks2016_api.git
