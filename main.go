@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"mime"
 	"net/http"
@@ -17,7 +18,10 @@ type User struct {
 	NeedsTravelReimbursement, Accepted, Waitlisted                                bool
 }
 
+var addr = flag.String("addr", ":8182", "the address to listen on")
+
 func main() {
+	flag.Parse()
 
 	// Had to do this because returns svg as text/xml when running on AppEngine: http://goo.gl/hwZSp2
 	mime.AddExtensionType(".svg", "image/svg+xml")
@@ -33,7 +37,8 @@ func main() {
 	sr.HandleFunc("/register", s.registerHandler)
 	r.HandleFunc("/{rest:.*}", s.staticHandler)
 	http.Handle("/", r)
-	log.Fatal(http.ListenAndServe(":8182", nil))
+	log.Printf("Listening on %s", *addr)
+	log.Fatal(http.ListenAndServe(*addr, nil))
 }
 
 type server struct {
