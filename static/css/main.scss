@@ -63,6 +63,7 @@ paper-button {
     padding: 11px 15px;
     margin-top: 10px;
     margin-bottom: 10px;
+    text-decoration: none;
   }
   &.register {
     border-bottom: $btn-shadow-size solid $register-btn-bg-shadow;

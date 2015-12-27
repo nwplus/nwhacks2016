@@ -63,7 +63,8 @@ paper-button {
     letter-spacing: 3px;
     padding: 11px 15px;
     margin-top: 10px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    text-decoration: none; }
   paper-button.register {
     border-bottom: 4px solid #D74343;
     background-color: #FF6B6B;
