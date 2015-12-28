@@ -5,6 +5,8 @@ import (
 	"log"
 	"mime"
 	"net/http"
+	"net/http/httputil"
+	"net/url"
 
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
@@ -33,8 +35,13 @@ func main() {
 	s := &server{db}
 
 	r := mux.NewRouter()
-	sr := r.PathPrefix("/api").Subrouter()
-	sr.HandleFunc("/register", s.registerHandler)
+	//sr := r.PathPrefix("/api").Subrouter()
+	//sr.HandleFunc("/register", s.registerHandler)
+	apiServer, err := url.Parse("http://localhost:8183")
+	if err != nil {
+		log.Fatal(err)
+	}
+	r.Handle("/api/{rest:.*}", httputil.NewSingleHostReverseProxy(apiServer))
 	r.HandleFunc("/{rest:.*}", s.staticHandler)
 	http.Handle("/", r)
 	log.Printf("Listening on %s", *addr)

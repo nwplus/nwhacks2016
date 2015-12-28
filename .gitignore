@@ -29,3 +29,5 @@ nwhacks2016
 
 .sass-cache
 bower_components
+*.db
+__pycache__
